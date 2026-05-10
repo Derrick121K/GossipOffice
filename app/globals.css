@@ -1,0 +1,474 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* South African Flag Inspired Color Palette */
+:root {
+  /* Primary: SA Green */
+  --background: oklch(0.99 0.005 145);
+  --foreground: oklch(0.13 0.03 145);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0.03 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0.03 145);
+  --primary: oklch(0.55 0.18 145);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.02 85);
+  --secondary-foreground: oklch(0.25 0.03 145);
+  --muted: oklch(0.96 0.01 145);
+  --muted-foreground: oklch(0.45 0.03 145);
+  --accent: oklch(0.75 0.18 85);
+  --accent-foreground: oklch(0.15 0.03 85);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.90 0.02 145);
+  --input: oklch(0.90 0.02 145);
+  --ring: oklch(0.55 0.18 145);
+  /* SA Flag colors for charts/accents */
+  --chart-1: oklch(0.55 0.18 145);
+  --chart-2: oklch(0.75 0.18 85);
+  --chart-3: oklch(0.55 0.22 25);
+  --chart-4: oklch(0.5 0.2 260);
+  --chart-5: oklch(0.2 0.01 0);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.98 0.01 145);
+  --sidebar-foreground: oklch(0.13 0.03 145);
+  --sidebar-primary: oklch(0.55 0.18 145);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.94 0.03 85);
+  --sidebar-accent-foreground: oklch(0.25 0.03 145);
+  --sidebar-border: oklch(0.90 0.02 145);
+  --sidebar-ring: oklch(0.55 0.18 145);
+  /* SA specific colors */
+  --sa-green: oklch(0.45 0.15 145);
+  --sa-gold: oklch(0.78 0.18 85);
+  --sa-red: oklch(0.55 0.22 25);
+  --sa-blue: oklch(0.45 0.18 260);
+  --sa-black: oklch(0.15 0.01 0);
+  --sa-white: oklch(0.99 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0.02 145);
+  --foreground: oklch(0.97 0.005 145);
+  --card: oklch(0.15 0.02 145);
+  --card-foreground: oklch(0.97 0.005 145);
+  --popover: oklch(0.15 0.02 145);
+  --popover-foreground: oklch(0.97 0.005 145);
+  --primary: oklch(0.65 0.18 145);
+  --primary-foreground: oklch(0.12 0.02 145);
+  --secondary: oklch(0.22 0.03 145);
+  --secondary-foreground: oklch(0.97 0.005 145);
+  --muted: oklch(0.22 0.02 145);
+  --muted-foreground: oklch(0.65 0.02 145);
+  --accent: oklch(0.65 0.15 85);
+  --accent-foreground: oklch(0.12 0.02 145);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.97 0 0);
+  --border: oklch(0.28 0.03 145);
+  --input: oklch(0.28 0.03 145);
+  --ring: oklch(0.65 0.18 145);
+  --chart-1: oklch(0.65 0.18 145);
+  --chart-2: oklch(0.75 0.18 85);
+  --chart-3: oklch(0.6 0.22 25);
+  --chart-4: oklch(0.6 0.2 260);
+  --chart-5: oklch(0.85 0.01 0);
+  --sidebar: oklch(0.15 0.02 145);
+  --sidebar-foreground: oklch(0.97 0.005 145);
+  --sidebar-primary: oklch(0.65 0.18 145);
+  --sidebar-primary-foreground: oklch(0.97 0.005 145);
+  --sidebar-accent: oklch(0.25 0.04 85);
+  --sidebar-accent-foreground: oklch(0.97 0.005 145);
+  --sidebar-border: oklch(0.28 0.03 145);
+  --sidebar-ring: oklch(0.65 0.18 145);
+  --sa-green: oklch(0.55 0.15 145);
+  --sa-gold: oklch(0.78 0.18 85);
+  --sa-red: oklch(0.6 0.22 25);
+  --sa-blue: oklch(0.55 0.18 260);
+  --sa-black: oklch(0.15 0.01 0);
+  --sa-white: oklch(0.97 0 0);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* South African Flag Gradient */
+.sa-gradient {
+  background: linear-gradient(135deg, 
+    var(--sa-green) 0%, 
+    var(--sa-gold) 25%, 
+    var(--sa-red) 50%, 
+    var(--sa-blue) 75%, 
+    var(--sa-black) 100%
+  );
+}
+
+.sa-gradient-text {
+  background: linear-gradient(135deg, 
+    var(--sa-green) 0%, 
+    var(--sa-gold) 50%, 
+    var(--sa-red) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sa-border {
+  border-image: linear-gradient(135deg, 
+    var(--sa-green) 0%, 
+    var(--sa-gold) 33%, 
+    var(--sa-red) 66%, 
+    var(--sa-blue) 100%
+  ) 1;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--sa-green); }
+  25% { box-shadow: 0 0 30px var(--sa-gold); }
+  50% { box-shadow: 0 0 40px var(--sa-red); }
+  75% { box-shadow: 0 0 30px var(--sa-blue); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-right {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounce-in {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: var(--sa-green); }
+  25% { border-color: var(--sa-gold); }
+  50% { border-color: var(--sa-red); }
+  75% { border-color: var(--sa-blue); }
+  100% { border-color: var(--sa-green); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-left {
+  animation: slide-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+.animate-rainbow-border {
+  animation: rainbow-border 4s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.dark .glass {
+  background: rgba(20, 30, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 122, 77, 0.1);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 122, 77, 0.2);
+}
+
+/* Button shine effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s;
+}
+
+.btn-shine:hover::before {
+  left: 100%;
+}
+
+/* SA Flag stripe effect */
+.sa-stripe {
+  position: relative;
+  overflow: hidden;
+}
+
+.sa-stripe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--sa-green) 0%, 
+    var(--sa-green) 16.66%, 
+    var(--sa-gold) 16.66%, 
+    var(--sa-gold) 33.33%, 
+    var(--sa-red) 33.33%, 
+    var(--sa-red) 50%, 
+    var(--sa-blue) 50%, 
+    var(--sa-blue) 66.66%, 
+    var(--sa-black) 66.66%, 
+    var(--sa-black) 83.33%, 
+    var(--sa-white) 83.33%
+  );
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 30px rgba(0, 122, 77, 0.4);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(255, 182, 18, 0.4);
+}
+
+.glow-red {
+  box-shadow: 0 0 30px rgba(224, 60, 49, 0.4);
+}
+
+.glow-blue {
+  box-shadow: 0 0 30px rgba(30, 144, 255, 0.4);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--sa-green), var(--sa-gold));
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--sa-gold), var(--sa-red));
+}
+
+/* Template card preview patterns */
+.pattern-dots {
+  background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    currentColor 10px,
+    currentColor 11px
+  );
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(currentColor 1px, transparent 1px),
+    linear-gradient(90deg, currentColor 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Vibrant buttons */
+.btn-sa-green {
+  background: linear-gradient(135deg, #007A4D, #00A86B);
+  color: white;
+}
+
+.btn-sa-gold {
+  background: linear-gradient(135deg, #FFB612, #FFD700);
+  color: #1A1A1A;
+}
+
+.btn-sa-red {
+  background: linear-gradient(135deg, #E03C31, #FF6B6B);
+  color: white;
+}
+
+.btn-sa-blue {
+  background: linear-gradient(135deg, #002395, #1E90FF);
+  color: white;
+}
