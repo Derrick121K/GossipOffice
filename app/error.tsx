@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useEffect } from 'react'
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
@@ -20,12 +21,12 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
         >
           Try again
         </button>
-        <a
+        <Link
           href="/"
           className="inline-flex h-9 items-center justify-center rounded-md border border-input bg-background px-4 text-sm font-medium shadow-sm hover:bg-accent hover:text-accent-foreground"
         >
           Go home
-        </a>
+        </Link>
       </div>
     </div>
   )
