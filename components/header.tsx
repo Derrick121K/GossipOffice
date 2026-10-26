@@ -17,7 +17,8 @@ import { useEffect, useState } from 'react'
 const navItems = [
   { href: '/files', label: 'Files' },
   { href: '/dashboard', label: 'Resumes' },
-  { href: '/templates', label: 'Templates' },
+  { href: '/templates', label: 'CV Templates' },
+  { href: '/everyday', label: 'Everyday Templates' },
   { href: '/tools', label: 'Office Tools' },
   { href: '/settings', label: 'Settings' },
 ]
