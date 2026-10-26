@@ -5,6 +5,9 @@ A free, local-first, AI-assisted office suite built with Next.js (App Router), T
 ## Features
 
 ### Core Functionality
+- **Everyday Template Centre** - reusable payslip, invoice, monthly budget, meeting minutes, leave application, and professional letter templates at `/everyday`
+- **Payslip document builder** - calculates gross earnings, entered deductions, and estimated net pay; PAYE/UIF are entered and must be checked against current payroll rules
+- **Template output** - live preview, save to local Files, and export to PDF or DOCX
 - **Resume & Cover Letter Builder** - CV builder with live preview + cover letter editing
 - **Office Tools** - Notes/Word/PowerPoint/Excel/Visio-style workspace (ribbon + Backstage) with local Files
 - **Live Preview** - Real-time preview as you type
@@ -127,6 +130,17 @@ If you ever pasted a real key into a file or chat history:
 - Go to Groq console and **revoke/rotate** the key immediately.
 - Update the key in Vercel env vars.
 - Restart/redeploy.
+
+## Everyday Templates
+Open `/everyday` to create:
+- Employee payslips (ZAR display; enter and verify PAYE/UIF and deductions yourself)
+- Business invoices
+- Monthly personal budgets
+- Meeting minutes
+- Leave applications
+- Professional letters
+
+Each template provides a live text preview and can be saved into the local Files library or exported as PDF/DOCX. The payslip builder is a document helper, not payroll software or tax advice. Verify all statutory calculations and employer requirements before issuing payslips.
 
 ## Safety notes (local-first)
 - Your documents are stored in your browser. Clearing site data can remove them.
