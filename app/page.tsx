@@ -57,6 +57,9 @@ export default function Home() {
             <Link href="/templates">
               <Button variant="ghost" className="hidden sm:inline-flex">Templates</Button>
             </Link>
+            <Link href="/everyday">
+              <Button variant="ghost" className="hidden sm:inline-flex">Everyday Templates</Button>
+            </Link>
             <Link href="/builder">
               <Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25">
                 Open Builder
@@ -111,6 +114,11 @@ export default function Home() {
               <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 py-6 border-2">
                 <Sparkles className="w-5 h-5 mr-2" />
                 Try AI Tools
+              </Button>
+            </Link>
+            <Link href="/everyday">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 py-6 border-2">
+                Everyday Templates
               </Button>
             </Link>
           </motion.div>
